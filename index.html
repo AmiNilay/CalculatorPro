@@ -188,11 +188,6 @@
                     <img src="./assets/light_mode.jpg" alt="Light Mode Screen" class="w-full h-auto" onerror="this.onerror=null; this.src='https://placehold.co/400x800/f3f4f6/3B82F6?text=Light+Mode';">
                 </div>
             </div>
-            
-            <p class="text-center text-gray-500 text-sm mt-8">
-                *Note: Images are referenced locally from the `./assets/` folder.*
-            </p>
-        </div>
     </section>
     
     <!-- Features Section (Fully Responsive Grid) -->
@@ -263,29 +258,52 @@
             <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white">How to Install the APK</h2>
             <p class="text-gray-400 text-center text-lg mb-12 max-w-3xl mx-auto">Follow these simple steps if you are installing **Calculator Pro** directly via the APK file (not through an app store).</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-                <!-- Step 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                
+                <!-- Step 1: Download -->
                 <div class="flex flex-col items-center text-center">
                     <div class="bg-blue-600 w-12 h-12 flex items-center justify-center rounded-full text-2xl font-extrabold mb-4">1</div>
+<<<<<<< HEAD
                     <h3 class="text-2xl font-bold mb-3">Download the File</h3>
                     <p class="text-gray-400 mb-4">Transfer the `Calculator.apk` file to your Android device via USB, email, or cloud service.</p>
                     <img src="./assets/step1_download.jpg" alt="Step 1 Screenshot: File Transfer" class="w-full max-w-[250px] rounded-xl shadow-lg border border-gray-700">
+=======
+                    <h3 class="text-xl font-bold mb-3">Download File</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Download the `Calculator.apk` file and ensure it is saved on your device.</p>
+                    <img src="./assets/step1_download.jpg" alt="Step 1 Screenshot: File Downloaded" class="w-full max-w-[200px] rounded-xl shadow-lg border border-gray-700">
+>>>>>>> 8bcfd61 (FEAT: Update landing page with 5-step APK installation guide and final animations)
                 </div>
                 
-                <!-- Step 2 -->
+                <!-- Step 2: Open/Tap -->
                 <div class="flex flex-col items-center text-center">
                     <div class="bg-blue-600 w-12 h-12 flex items-center justify-center rounded-full text-2xl font-extrabold mb-4">2</div>
-                    <h3 class="text-2xl font-bold mb-3">Open and Initiate</h3>
-                    <p class="text-gray-400 mb-4">Use your phone's file manager to locate and tap the **APK file**. This will begin the installation process.</p>
-                    <img src="./assets/step2_open_apk.jpg" alt="Step 2 Screenshot: Tap APK File" class="w-full max-w-[250px] rounded-xl shadow-lg border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3">Download Anyway</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Click on Download Anyway (Ignore the Warning)</p>
+                    <img src="./assets/step2_open_apk.jpg" alt="Step 2 Screenshot: Tap APK File" class="w-full max-w-[200px] rounded-xl shadow-lg border border-gray-700">
                 </div>
 
-                <!-- Step 3 -->
+                <!-- Step 3: Allow Sources -->
                 <div class="flex flex-col items-center text-center">
                     <div class="bg-blue-600 w-12 h-12 flex items-center justify-center rounded-full text-2xl font-extrabold mb-4">3</div>
-                    <h3 class="text-2xl font-bold mb-3">Allow Unknown Sources</h3>
-                    <p class="text-gray-400 mb-4">When prompted, tap **"Settings"** and enable **"Allow from this source"** (or "Install unknown apps") for your browser/file manager.</p>
-                    <img src="./assets/step3_allow_sources.jpg" alt="Step 3 Screenshot: Allow Unknown Sources" class="w-full max-w-[250px] rounded-xl shadow-lg border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3">Click On Open</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Click on Open in the Pop-Up.</p>
+                    <img src="./assets/step3_allow_sources.jpg" alt="Step 3 Screenshot: Allow Unknown Sources" class="w-full max-w-[200px] rounded-xl shadow-lg border border-gray-700">
+                </div>
+                
+                <!-- Step 4: Check Permissions -->
+                 <div class="flex flex-col items-center text-center">
+                    <div class="bg-blue-600 w-12 h-12 flex items-center justify-center rounded-full text-2xl font-extrabold mb-4">4</div>
+                    <h3 class="text-xl font-bold mb-3">Download Manager</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Tap the Calculator.apk to INSTALL.</p>
+                    <img src="./assets/step4_permissions_check.jpg" alt="Step 4 Screenshot: Review Permissions" class="w-full max-w-[200px] rounded-xl shadow-lg border border-gray-700">
+                </div>
+
+                <!-- Step 5: Final Install -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-blue-600 w-12 h-12 flex items-center justify-center rounded-full text-2xl font-extrabold mb-4">5</div>
+                    <h3 class="text-xl font-bold mb-3">Last Installation Step</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Click the Install Option to Install the Calculator App.</p>
+                    <img src="./assets/step5_install_complete.jpg" alt="Step 5 Screenshot: Installation Complete" class="w-full max-w-[200px] rounded-xl shadow-lg border border-gray-700">
                 </div>
             </div>
 
