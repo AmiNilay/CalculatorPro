@@ -10,66 +10,85 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Deep dark background */
+            background-color: #0c0d12; /* Very dark background */
         }
         .hero-bg {
-            /* Using solid colors for gradient is usually faster than complex image backgrounds */
-            background-image: linear-gradient(135deg, #171d24 0%, #0d1117 100%);
+            background-image: linear-gradient(135deg, #1f2231 0%, #0c0d12 100%);
         }
-        .gradient-text {
-            background-image: linear-gradient(90deg, #60A5FA, #3B82F6);
+        .neon-text {
+            /* Vibrant electric blue gradient */
+            background-image: linear-gradient(90deg, #44e8ff, #0099ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
+            text-shadow: 0 0 10px rgba(68, 232, 255, 0.5);
         }
         
-        /* --- Optimized Mockup Animation --- */
+        /* --- Mockup and Animation Styling --- */
         .mockup-display {
-            background-color: #171d24;
+            background-color: #1a1a2e; /* Dark display shell */
             border-radius: 1.5rem;
-            /* Simplified shadow for performance */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
-            transform: rotateY(-3deg) rotateX(3deg); 
-            /* Faster transition time */
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            box-shadow: 0 0 50px rgba(0, 153, 255, 0.4); /* Neon shadow */
+            transform: rotateY(-5deg) rotateX(5deg); 
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
             width: 320px; 
             height: 550px;
-            /* Performance Hint: Tells the browser to optimize these properties */
             will-change: transform, box-shadow; 
+            border: 2px solid #0099ff; /* Subtle neon border */
         }
         .mockup-display:hover {
-            transform: rotateY(0deg) rotateX(0deg) scale(1.03); 
-            /* Enhanced, optimized blue glow effect on hover */
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6); 
+            transform: rotateY(0deg) rotateX(0deg) scale(1.05); 
+            box-shadow: 0 0 60px rgba(68, 232, 255, 0.8), 0 0 20px rgba(0, 153, 255, 0.5); 
         }
         .mockup-keypad {
-            background-color: #21262d; 
-            border-top: 1px solid #1a1a1a;
+            background-color: #141421; /* Keypad background */
+            border-top: 1px solid #0099ff;
+        }
+        .keypad-button {
+            /* Styling for number keys */
+            background-color: #2a2a47; 
+            color: #d1d5db; 
+            transition: all 0.2s;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        .keypad-button:hover {
+            background-color: #3f3f6e; 
+            transform: scale(1.05);
+        }
+        .op-button {
+            /* Styling for operator keys */
+            background-color: #0077c2; 
+            color: white;
+        }
+        .op-button:hover {
+            background-color: #005a99;
         }
         
-        /* --- Optimized Card Hover --- */
+        /* --- Card Hover Animation --- */
         .card-hover {
-            transition: all 0.3s ease-out;
-            will-change: transform; /* Performance Hint */
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.5, 1);
+            will-change: transform;
+            border-bottom: 4px solid transparent; /* Base for animated border */
         }
         .card-hover:hover {
-            transform: translateY(-5px); /* Cheap and smooth animation */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); 
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            border-color: #44e8ff; /* Highlight color on hover */
         }
     </style>
 </head>
-<body class="text-white">
+<body class="text-gray-100">
 
     <!-- Header & Navigation -->
-    <header class="p-4 md:p-6 bg-[#0d1117] sticky top-0 z-10">
+    <header class="p-4 md:p-6 bg-[#0c0d12] sticky top-0 z-10 border-b border-gray-800">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-extrabold gradient-text">Calculator Pro</h1>
+            <h1 class="text-3xl font-extrabold neon-text">Calculator Pro</h1>
             <nav class="hidden sm:block">
-                <a href="#features" class="text-gray-400 hover:text-blue-400 mx-3 transition duration-200">Features</a>
-                <a href="#gallery" class="text-gray-400 hover:text-blue-400 mx-3 transition duration-200">Screenshots</a>
-                <a href="#install" class="text-gray-400 hover:text-blue-400 mx-3 transition duration-200">Install Guide</a>
-                <a href="#download" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg ml-4 transition duration-200 shadow-lg">Download Now</a>
+                <a href="#features" class="text-gray-400 hover:text-cyan-400 mx-3 transition duration-300">Features</a>
+                <a href="#gallery" class="text-gray-400 hover:text-cyan-400 mx-3 transition duration-300">Screenshots</a>
+                <a href="#install" class="text-gray-400 hover:text-cyan-400 mx-3 transition duration-300">Install Guide</a>
+                <a href="https://github.com/AmiNilay/CalculatorPro/releases/download/v1/Calculator.apk" class="bg-blue-600 hover:bg-cyan-500 text-white font-semibold py-2 px-4 rounded-lg ml-4 transition duration-300 shadow-xl shadow-blue-500/50">Download APK</a>
             </nav>
         </div>
     </header>
@@ -80,16 +99,16 @@
             <!-- Left: Marketing Text (Fully Responsive) -->
             <div class="lg:w-1/2 text-center lg:text-left">
                 <h2 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
-                    Powerfully Simple. <span class="gradient-text">Scientifically Advanced.</span>
+                    Precision Redefined. <span class="neon-text">Calculations that flow.</span>
                 </h2>
-                <p class="text-gray-300 text-xl md:text-2xl mb-10 max-w-lg lg:max-w-none mx-auto lg:mx-0">
-                    **Calculator Pro** is the modern calculator your Android needs. Seamlessly switch between basic arithmetic and advanced scientific functions with a tap.
+                <p class="text-gray-400 text-xl md:text-2xl mb-10 max-w-lg lg:max-w-none mx-auto lg:mx-0">
+                    **Calculator Pro** brings a professional, fluid experience to your mobile calculations. Get advanced scientific power without complexity.
                 </p>
-                <!-- Download Buttons -->
+                <!-- Download Button (Updated Link) -->
                 <div id="download" class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                    <a href="#" class="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 shadow-xl shadow-blue-500/50 hover:shadow-lg">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM4.75 10a5.25 5.25 0 1110.5 0 5.25 5.25 0 01-10.5 0z" clip-rule="evenodd"></path></svg>
-                        <span>Download APK</span>
+                    <a href="https://github.com/AmiNilay/CalculatorPro/releases/download/v1/Calculator.apk" class="flex items-center justify-center space-x-3 bg-blue-600 hover:bg-cyan-500 text-white font-extrabold py-3 px-8 rounded-xl transition duration-500 shadow-2xl shadow-blue-500/50 hover:shadow-cyan-400/70 text-lg uppercase tracking-wider">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        <span>Download APK (Direct)</span>
                     </a>
                 </div>
             </div>
@@ -99,45 +118,45 @@
                 <div class="mockup-display">
                     <!-- Calculator Content -->
                     <div class="p-6 text-right h-1/3">
-                        <div class="text-gray-400 text-xl">789+1</div>
-                        <div class="text-5xl md:text-6xl font-light mt-4">790</div>
+                        <div class="text-gray-400 text-xl">sin(30) + 789</div>
+                        <div class="text-5xl md:text-6xl font-light mt-4 text-white">789.5</div>
                     </div>
                     <div class="mockup-keypad grid grid-cols-5 p-4 gap-2 h-2/3">
                         <!-- Scientific Column -->
                         <div class="flex flex-col gap-2">
-                             <div class="flex-1 bg-[#1e2329] text-gray-300 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">sin</div>
-                             <div class="flex-1 bg-[#1e2329] text-gray-300 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">cos</div>
-                             <div class="flex-1 bg-[#1e2329] text-gray-300 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">tan</div>
-                             <div class="flex-1 bg-[#1e2329] text-gray-300 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">log</div>
-                             <div class="flex-1 bg-[#1e2329] text-gray-300 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">√</div>
+                             <div class="flex-1 keypad-button text-cyan-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">sin</div>
+                             <div class="flex-1 keypad-button text-cyan-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">cos</div>
+                             <div class="flex-1 keypad-button text-cyan-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">tan</div>
+                             <div class="flex-1 keypad-button text-cyan-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">log</div>
+                             <div class="flex-1 keypad-button text-cyan-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">√</div>
                         </div>
                         
                         <!-- Main Keypad (4 columns) -->
                         <div class="col-span-4 grid grid-cols-4 gap-2">
                              <!-- Rows with consistent styling and interaction -->
-                            <div class="bg-[#1e2329] text-blue-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">C</div>
-                            <div class="bg-[#1e2329] text-blue-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">←</div>
-                            <div class="bg-[#1e2329] text-blue-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">%</div>
-                            <div class="bg-blue-600 text-white font-semibold flex items-center justify-center rounded-lg hover:bg-blue-700 transition duration-150">÷</div>
+                            <div class="keypad-button text-blue-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">C</div>
+                            <div class="keypad-button text-blue-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">←</div>
+                            <div class="keypad-button text-blue-400 font-semibold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">%</div>
+                            <div class="op-button font-semibold flex items-center justify-center rounded-lg transition duration-150">÷</div>
 
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">7</div>
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">8</div>
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">9</div>
-                            <div class="bg-blue-600 text-white font-semibold flex items-center justify-center rounded-lg hover:bg-blue-700 transition duration-150">×</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">7</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">8</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">9</div>
+                            <div class="op-button font-semibold flex items-center justify-center rounded-lg transition duration-150">×</div>
 
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">4</div>
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">5</div>
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">6</div>
-                            <div class="bg-blue-600 text-white font-semibold flex items-center justify-center rounded-lg hover:bg-blue-700 transition duration-150">-</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">4</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">5</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">6</div>
+                            <div class="op-button font-semibold flex items-center justify-center rounded-lg transition duration-150">-</div>
 
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">1</div>
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">2</div>
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">3</div>
-                            <div class="bg-blue-600 text-white font-semibold flex items-center justify-center rounded-lg hover:bg-blue-700 transition duration-150">+</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">1</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">2</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">3</div>
+                            <div class="op-button font-semibold flex items-center justify-center rounded-lg transition duration-150">+</div>
 
-                            <div class="col-span-2 bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">0</div>
-                            <div class="bg-[#21262d] text-white font-bold flex items-center justify-center rounded-lg hover:bg-gray-700 transition duration-150">.</div>
-                            <div class="bg-blue-600 text-white font-semibold flex items-center justify-center rounded-lg hover:bg-blue-700 transition duration-150">=</div>
+                            <div class="col-span-2 keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">0</div>
+                            <div class="keypad-button font-bold flex items-center justify-center rounded-lg transition duration-150">.</div>
+                            <div class="op-button font-semibold flex items-center justify-center rounded-lg transition duration-150">=</div>
                         </div>
                     </div>
                 </div>
@@ -146,26 +165,26 @@
     </section>
 
     <!-- App Gallery Section (Responsive Grid) -->
-    <section id="gallery" class="py-20 md:py-28 bg-[#0d1117]">
+    <section id="gallery" class="py-20 md:py-28 bg-[#0c0d12]">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white">App Gallery</h2>
             <p class="text-gray-400 text-center text-lg mb-12 max-w-3xl mx-auto">See **Calculator Pro** in action. From its fluid dark mode interface to the detailed scientific keypad, every feature is designed for efficiency.</p>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                <!-- Screenshots (All have consistent sizing and hover animation) -->
-                <div class="rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/50 transition duration-300 hover:scale-[1.02]">
+                <!-- Screenshots (Paths updated to local assets) -->
+                <div class="rounded-xl overflow-hidden shadow-2xl hover:shadow-cyan-500/50 transition duration-300 hover:scale-[1.02]">
                     <img src="./assets/main_dark_mode.jpg" alt="Main Dark Mode Screen" class="w-full h-auto" onerror="this.onerror=null; this.src='https://placehold.co/400x800/171d24/60A5FA?text=Main+Dark+Mode';" />
                 </div>
                 
-                <div class="rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/50 transition duration-300 hover:scale-[1.02]">
+                <div class="rounded-xl overflow-hidden shadow-2xl hover:shadow-cyan-500/50 transition duration-300 hover:scale-[1.02]">
                     <img src="./assets/scientific_mode.jpg" alt="Scientific Mode Screen" class="w-full h-auto" onerror="this.onerror=null; this.src='https://placehold.co/400x800/21262d/FCD34D?text=Scientific+Mode';">
                 </div>
 
-                <div class="rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/50 transition duration-300 hover:scale-[1.02]">
+                <div class="rounded-xl overflow-hidden shadow-2xl hover:shadow-cyan-500/50 transition duration-300 hover:scale-[1.02]">
                     <img src="./assets/history_log.jpg" alt="History Log Screen" class="w-full h-auto" onerror="this.onerror=null; this.src='https://placehold.co/400x800/1e2329/9333EA?text=History+Log';">
                 </div>
 
-                <div class="rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/50 transition duration-300 hover:scale-[1.02]">
+                <div class="rounded-xl overflow-hidden shadow-2xl hover:shadow-cyan-500/50 transition duration-300 hover:scale-[1.02]">
                     <img src="./assets/light_mode.jpg" alt="Light Mode Screen" class="w-full h-auto" onerror="this.onerror=null; this.src='https://placehold.co/400x800/f3f4f6/3B82F6?text=Light+Mode';">
                 </div>
             </div>
@@ -177,30 +196,34 @@
     </section>
     
     <!-- Features Section (Fully Responsive Grid) -->
-    <section id="features" class="py-20 md:py-28 bg-[#171d24]">
+    <section id="features" class="py-20 md:py-28 bg-[#1f2231]">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 gradient-text">Core Features</h2>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 neon-text">Core Features</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 
-                <div class="bg-[#0d1117] p-8 rounded-2xl shadow-xl border-t-4 border-cyan-500 card-hover hover:shadow-cyan-500/30">
+                <!-- Feature 1: Share Calculation -->
+                <div class="bg-[#0c0d12] p-8 rounded-2xl shadow-xl border-l-4 border-cyan-500 card-hover">
                     <div class="text-3xl text-cyan-400 mb-4">📲</div>
                     <h3 class="text-2xl font-bold mb-3">Share Calculation</h3>
                     <p class="text-gray-400">Easily share the full calculation (**expression = result**) with colleagues or friends via any messaging or social app directly from the history log or main screen.</p>
                 </div>
 
-                <div class="bg-[#0d1117] p-8 rounded-2xl shadow-xl border-t-4 border-red-500 card-hover hover:shadow-red-500/30">
+                <!-- Feature 2: Quick Favorites -->
+                <div class="bg-[#0c0d12] p-8 rounded-2xl shadow-xl border-l-4 border-red-500 card-hover">
                     <div class="text-3xl text-red-400 mb-4">⭐</div>
                     <h3 class="text-2xl font-bold mb-3">Quick Favorites</h3>
                     <p class="text-gray-400">Instantly mark any result in your history log as a favorite for immediate recall. Perfect for constants and frequently used outputs.</p>
                 </div>
 
-                <div class="bg-[#0d1117] p-8 rounded-2xl shadow-xl border-t-4 border-purple-500 card-hover hover:shadow-purple-500/30">
+                <!-- Feature 3: Calculation History -->
+                <div class="bg-[#0c0d12] p-8 rounded-2xl shadow-xl border-l-4 border-purple-500 card-hover">
                     <div class="text-3xl text-purple-400 mb-4">💾</div>
                     <h3 class="text-2xl font-bold mb-3">Calculation History</h3>
                     <p class="text-gray-400">All your previous calculations are saved locally. Review, reuse, or share past expressions with ease via the history log.</p>
                 </div>
                 
-                <div class="bg-[#0d1117] p-8 rounded-2xl shadow-xl border-t-4 border-blue-500 card-hover hover:shadow-blue-500/30">
+                <!-- Feature 4: Scientific Mode -->
+                <div class="bg-[#0c0d12] p-8 rounded-2xl shadow-xl border-l-4 border-blue-500 card-hover">
                     <div class="text-3xl text-blue-400 mb-4">🔬</div>
                     <h3 class="text-2xl font-bold mb-3">Scientific Mode</h3>
                     <p class="text-gray-400">Instantly toggle the keypad to access trigonometric functions (sin, cos, tan), logarithms, and square roots. Perfect for engineering and physics calculations.</p>
@@ -211,31 +234,31 @@
     </section>
 
     <!-- Scientific Showcase Section -->
-    <section id="scientific" class="py-20 md:py-28 bg-[#0d1117]">
+    <section id="scientific" class="py-20 md:py-28 bg-[#0c0d12]">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
             
             <div class="md:w-1/2 text-center md:text-left">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 gradient-text">Beyond Basic Arithmetic</h2>
-                <p class="text-gray-300 text-xl mb-6">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 neon-text">Beyond Basic Arithmetic</h2>
+                <p class="text-gray-400 text-xl mb-6">
                     Stop struggling with complex equations. **Calculator Pro** handles percentages, powers, and advanced functions directly within the calculation engine for accurate, instant results.
                 </p>
-                <ul class="text-gray-400 space-y-3">
-                    <li class="flex items-center space-x-2"><span class="text-blue-400 font-bold text-lg">✓</span> <span>Support for complex nested expressions</span></li>
-                    <li class="flex items-center space-x-2"><span class="text-blue-400 font-bold text-lg">✓</span> <span>Trigonometry (sin, cos, tan)</span></li>
-                    <li class="flex items-center space-x-2"><span class="text-blue-400 font-bold text-lg">✓</span> <span>Logarithmic and Root operations</span></li>
+                <ul class="text-gray-400 space-y-3 text-lg">
+                    <li class="flex items-center space-x-2"><span class="text-cyan-400 font-bold text-lg">✓</span> <span>Support for complex nested expressions</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-cyan-400 font-bold text-lg">✓</span> <span>Trigonometry (sin, cos, tan) and Exponents</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-cyan-400 font-bold text-lg">✓</span> <span>Logarithmic and Root operations</span></li>
                 </ul>
             </div>
             
             <!-- Scientific Keypad Mockup -->
             <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
-                 <img src="https://placehold.co/400x400/171d24/3b82f6?text=SCIENTIFIC+DISPLAY" alt="Scientific Display Mockup" class="w-full max-w-sm rounded-2xl shadow-2xl border border-gray-700 transition duration-300 hover:shadow-blue-500/50" onerror="this.onerror=null; this.src='https://placehold.co/400x400/171d24/3B82F6?text=Scientific+Mode+Mockup';" />
+                 <img src="https://placehold.co/400x400/171d24/3b82f6?text=SCIENTIFIC+DISPLAY" alt="Scientific Display Mockup" class="w-full max-w-sm rounded-2xl shadow-2xl border border-gray-700 transition duration-300 hover:shadow-cyan-500/50" onerror="this.onerror=null; this.src='https://placehold.co/400x400/171d24/3B82F6?text=Scientific+Mode+Mockup';" />
             </div>
 
         </div>
     </section>
 
     <!-- Installation Guide Section -->
-    <section id="install" class="py-20 md:py-28 bg-[#171d24]">
+    <section id="install" class="py-20 md:py-28 bg-[#1f2231]">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white">How to Install the APK</h2>
             <p class="text-gray-400 text-center text-lg mb-12 max-w-3xl mx-auto">Follow these simple steps if you are installing **Calculator Pro** directly via the APK file (not through an app store).</p>
@@ -245,7 +268,7 @@
                 <div class="flex flex-col items-center text-center">
                     <div class="bg-blue-600 w-12 h-12 flex items-center justify-center rounded-full text-2xl font-extrabold mb-4">1</div>
                     <h3 class="text-2xl font-bold mb-3">Download the File</h3>
-                    <p class="text-gray-400 mb-4">Transfer the `calculator.apk` file to your Android device via USB, email, or a cloud service like Google Drive.</p>
+                    <p class="text-gray-400 mb-4">Transfer the `Calculator.apk` file to your Android device via USB, email, or cloud service.</p>
                     <img src="./assets/step1_download.jpg" alt="Step 1 Screenshot: File Transfer" class="w-full max-w-[250px] rounded-xl shadow-lg border border-gray-700">
                 </div>
                 
@@ -267,7 +290,7 @@
             </div>
 
             <div class="mt-16 text-center">
-                <a href="#download" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl transition duration-300 shadow-xl shadow-blue-500/50">
+                <a href="https://github.com/AmiNilay/CalculatorPro/releases/download/v1/Calculator.apk" class="bg-blue-600 hover:bg-cyan-500 text-white font-bold py-3 px-8 rounded-xl transition duration-300 shadow-xl shadow-blue-500/50 hover:shadow-cyan-400/70 text-lg uppercase tracking-wider">
                     Download Calculator Pro APK
                 </a>
             </div>
@@ -276,12 +299,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#171d24] mt-12 py-10 border-t border-gray-800">
+    <footer class="bg-[#0c0d12] mt-12 py-10 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-6 text-center text-gray-500">
             <p class="text-lg font-semibold mb-2">Calculator Pro</p>
             <p class="text-sm">Ready to simplify your calculations?</p>
             <div class="mt-4 flex justify-center gap-4">
-                <a href="#download" class="text-blue-400 hover:text-blue-300 transition duration-300">Download APK</a>
+                <a href="https://github.com/AmiNilay/CalculatorPro/releases/download/v1/Calculator.apk" class="text-blue-400 hover:text-cyan-300 transition duration-300">Download APK</a>
             </div>
             <p class="text-xs mt-6">&copy; 2025 Calculator Pro. All rights reserved.</p>
         </div>
